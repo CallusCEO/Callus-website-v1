@@ -1,0 +1,197 @@
+#contact {
+    min-height: 1000px;
+    background-image: linear-gradient(to bottom, rgba(0, 27, 35, 0.801), #111), url('../assets/comment-section.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top: solid #2d2d2d 2px;
+    width: 110%;
+    margin: 100px 0 0 0;
+    padding: 50px;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: brightness(120%) contrast(90%) sepia(50%) hue-rotate(180deg);
+
+    
+
+    h1 {
+        text-align: center;
+        height: max-content;
+        width: 80%;
+        max-width: 700px;
+        padding: 0 0 10px;
+        margin: 0 0 20px 0;
+        border-bottom: #5a5a5a solid 1px;
+    }
+
+    #comment-section {
+        width: 80%;
+        height: fit-content;
+        border: #2d2d2d 1px solid;
+        border-radius: 20px;
+        margin: 0 0 20px 0;
+        padding: 20px;
+        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(2px);
+        background-image: linear-gradient(#1111115e, #11111153);
+        transition: all 1s ease;
+
+        h2 {
+            text-align: start;
+            color: rgb(0, 90, 114);
+            position: relative;
+            padding: 0 0 10px;
+        }
+
+        h2::before {
+            content: '';
+            position: absolute;
+            width: 0px;
+            height: 2px;
+            background-color: rgb(0, 90, 114);
+            bottom: 0;
+            left: 0;
+            transition: all 1s ease;
+        }
+
+        .comment-container {
+            position: relative;
+            min-height: 100px;
+            max-height: 200px;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-self: center;
+
+            #comment {
+                padding: 20px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 1rem;
+                background-color: transparent;
+                background-image: linear-gradient(rgba(17, 17, 17, 0.5), rgba(17, 17, 17, 0.5));
+                border-radius: 20px;
+                resize: none;
+                border: #2d2d2d solid 1px;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+                field-sizing: content;
+                max-width: 300px;
+                min-width: 200px;
+                max-height: 200px;
+            }
+
+            textarea:focus {
+                outline: #0067f797 solid 2px;
+                outline-offset: 2px;
+            }            
+
+            textarea::-webkit-scrollbar {
+                width: 8px;  /* Width of the scrollbar */
+            }
+            
+            textarea::-webkit-scrollbar-track {
+                background: #3b3b3b5b;  /* Background color of the scrollbar track */
+                border-radius: 10px;
+                margin: 15px 0px;
+            }
+            
+            textarea::-webkit-scrollbar-thumb {
+                background: #333;  /* Scrollbar color */
+                border-radius: 10px;
+                min-height: 20px;
+            }
+            
+            textarea::-webkit-scrollbar-thumb:hover {
+                background: #555;  /* Color when hovered */
+            }
+
+            button {
+                padding: 10px;
+                width: 100px;
+                border-radius: 20px;
+                border: none;
+                font-family: 'Courier New', Courier, monospace;
+                margin: 5px 0 0;
+                background-color: rgb(0, 90, 114);
+                transition: all 0.2s ease;
+                box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+                align-self: center;
+                translate: 120px 0;
+
+
+                &:hover {
+                    background-color: #0043a1;
+                }
+            }
+
+            p {
+                font-family: 'Courier New', Courier, monospace;
+                color: #0068f7;
+                margin: 10px 0 0;
+            }
+
+            @media screen and (min-width: 1000px) {
+
+                #comment {
+                    min-width: 400px;
+                    max-width: 600px;
+                }
+
+                button {
+                    translate: 270px 0;
+                }
+                
+            }
+            
+        }
+
+        &:hover {
+            backdrop-filter: blur(10px);
+            transform: translateY(5px);
+
+            h2::before {
+                width: clamp(200px, 60vw, 400px);
+            }
+        }
+    }
+
+    #communication {
+        margin: 100px 0 0;
+        height: 700px;
+        background-image: linear-gradient(to bottom, #111, #11111151);
+        width: 100%;
+        border-top: 1px solid;
+
+        h2 {
+            text-align: start;
+            height: max-content;
+            width: 80%;
+            max-width: 700px;
+            padding: 0 0 10px;
+            margin: 100px 0 20px clamp(10px, 10vw, 140px);
+            justify-self: start;
+            border-bottom: #5a5a5a solid 1px;
+        }
+
+        .discord {
+            background-image: linear-gradient(to top left, #111111, rgb(0, 90, 114));
+            width: clamp(70px, 10vw, 100px);
+            height: clamp(70px, 10vw, 100px);
+            margin: 50px 20px 20px clamp(10px, 10vw, 140px);
+
+            mask-image: url("../assets/discord.png");
+            mask-size: contain;
+            mask-position: center;
+            mask-repeat: no-repeat;
+
+            transition: all 1s cubic-bezier(.29,0,.12,1.02);
+
+            &:hover {
+                transform: scale(1.1) rotate(365deg);
+            }
+        }
+    }
+}
